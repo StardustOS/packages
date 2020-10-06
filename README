@@ -1,0 +1,5 @@
+Software packages
+
+Software packages ported and adapted to work with Stardust for experimental purposes. Currently, these software packages include:
+
+- fs, which is a rudimentary file system library designed for embedded systems, which integrates with the block front-end device driver and provides a subset of standard file system functions
