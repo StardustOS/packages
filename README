@@ -1,5 +1,7 @@
 Software packages
 
-Software packages ported and adapted to work with Stardust for experimental purposes. Currently, these software packages include:
+Software packages ported and adapted to work with Stardust for experimental purposes only. Currently, these software packages include:
 
-- fs, which is a rudimentary file system library designed for embedded systems, which integrates with the block front-end device driver and provides a subset of standard file system functions
+- fatfs: This is a rudimentary file system library designed for embedded systems, which integrates with the block front-end device driver using an operating system adaptation layer designed for Stardust. In addition to this library, we provide standard file system functions that map to the library's native functions.
+
+- fdlibm: This is a small open-source implementation of the maths library which supports IEEE 754 floating-point arithmetic.
