@@ -40,5 +40,6 @@ int copy_read_buffer (char *ptr, BYTE *buf, int len);
 int copy_write_buffer (char *ptr, const BYTE *buf, int len);
 
 extern int init_disk(void);
+extern int disk_ready; 
 
 #endif

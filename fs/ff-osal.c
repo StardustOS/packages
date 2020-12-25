@@ -28,9 +28,17 @@
 #include <fs/ff.h>
 #include <fs/osal.h>
 
+int disk_ready = 0;
+
 extern int init_disk(void)
 {
-	int result;
+    if (disk_ready) {
+        printk("DISK ALREADY READY! RETURNING FROM INIT DISK\n");
+        return disk_ready;
+    }
+    printk("IN INIT DISK\n");
+    
+    int result;
 	FRESULT fr;
 	while (1)
 	{
@@ -41,7 +49,7 @@ extern int init_disk(void)
 			{
 				/* This is a startup information message */
 				printk("file system  \t: initialised for block device 0\n");
-				result = 1;
+				result = disk_ready = 1;
 			}
 			else
 			{
