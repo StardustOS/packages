@@ -33,10 +33,9 @@ int disk_ready = 0;
 extern int init_disk(void)
 {
     if (disk_ready) {
-        printk("DISK ALREADY READY! RETURNING FROM INIT DISK\n");
+        printk("Disk has already been initialized!\n");
         return disk_ready;
     }
-    printk("IN INIT DISK\n");
     
     int result;
 	FRESULT fr;
@@ -49,7 +48,8 @@ extern int init_disk(void)
 			{
 				/* This is a startup information message */
 				printk("file system  \t: initialised for block device 0\n");
-				result = disk_ready = 1;
+                disk_ready = 1;
+				result = 1;
 			}
 			else
 			{
